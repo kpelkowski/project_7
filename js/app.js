@@ -22,14 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
     location.reload();
   }
 
-  if(resetBtn.textContent = 'Start Game') {
-    resetBtn[0].addEventListener('click', (event) => {
-      if(event.target.tagName == 'A') {
-        overlay.style.display = 'none';
-        overlay.classList.remove('start');
-      }
-      });
+  resetBtn[0].addEventListener('click', (event) => {
+    if(event.target.tagName == 'A') {
+      overlay.style.display = 'none';
+      overlay.classList.remove('start');
     }
+
+    if(event.target.textContent == 'Play again?') {
+      reset();
+    }
+    });
+
 //=============================================================================
 //get a random phrase from the array
 //=============================================================================
@@ -135,9 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function displayWinLost() {
     overlay.style.display = '';
       resetBtn[0].addEventListener('click', (event) => {
-        if(resetBtn.textContent = 'Play again?') {
-          reset();
-        }
         });
   }
 });
